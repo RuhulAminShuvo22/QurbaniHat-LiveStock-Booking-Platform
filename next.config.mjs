@@ -12,15 +12,52 @@
 
 // export default nextConfig;
 
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactCompiler: true,
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: 'https',
+//         hostname: 'images.unsplash.com',
+//       },
+      
+//     ],
+//   },
+// };
+
+// export default nextConfig;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
+
   images: {
+    // multiple host allow করা
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com', // কখনো কখনো unsplash এইটা use করে
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co',
+      },
+    ],
+
+    // optional fallback (simple way)
+    domains: [
+      'images.unsplash.com',
+      'plus.unsplash.com',
+      'cdn.pixabay.com',
+      'i.ibb.co',
     ],
   },
 };
