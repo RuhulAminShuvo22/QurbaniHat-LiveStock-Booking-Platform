@@ -21,7 +21,7 @@
 //         protocol: 'https',
 //         hostname: 'images.unsplash.com',
 //       },
-      
+
 //     ],
 //   },
 // };
@@ -72,39 +72,14 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "**", // allow all domains
       },
       {
-        protocol: "https",
-        hostname: "plus.unsplash.com",
+        protocol: "http",
+        hostname: "**", // allow all http domains
       },
-      {
-        protocol: "https",
-        hostname: "cdn.pixabay.com",
-      },
-
-      // তোমার JSON data এর domain
-      {
-        protocol: "https",
-        hostname: "i.ibb.co.com",
-      },
-
-      // যদি i.ibb.co use করো future এ
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
-      },
-    ],
-
-    domains: [
-      "images.unsplash.com",
-      "plus.unsplash.com",
-      "cdn.pixabay.com",
-      "i.ibb.co.com",
-      "i.ibb.co",
     ],
   },
 };
 
 export default nextConfig;
-
