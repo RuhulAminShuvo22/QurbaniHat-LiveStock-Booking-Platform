@@ -1,10 +1,49 @@
+import { Card, Separator } from "@heroui/react";
+import Image from "next/image";
+import { FaWeightScale } from "react-icons/fa6";
+import { IoLocation } from "react-icons/io5";
 
 
-const AnimalCard = () => {
+const AnimalCard = ({ animal }) => {
+    console.log(animal, "animal")
+
+
     return (
-        <div>
-            
-        </div>
+        <Card className="border rounded-xl">
+            <div>
+                <Image
+                    
+                    src={animal.image}
+                    height={200}
+                    width={200}
+                    alt={animal.name}
+                >
+
+                </Image>
+            </div>
+
+            <div>
+                <div>
+                    <h2 className="font-medium">{animal.name}</h2>
+                </div>
+
+                <div className="flex gap-15 font-medium">
+                    <div className="flex items-center gap-2">
+                        <p><FaWeightScale /></p>
+                        <p>{animal.weight}</p>
+                    </div>
+                    
+
+                    <div className="flex items-center gap-2">
+                        <p><IoLocation /></p>
+                        <p>{animal.location}</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </Card>
     );
 };
 

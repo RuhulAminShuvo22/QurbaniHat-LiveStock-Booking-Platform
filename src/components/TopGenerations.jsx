@@ -1,3 +1,4 @@
+import AnimalCard from "./AnimalCard";
 
 
 const TopGenerations = async () => {
@@ -12,12 +13,12 @@ const TopGenerations = async () => {
         <div className="text-2xl font-bold mt-5">
             <h1>Top Animals</h1>
 
-            <div>
+            <div className="grid grid-cols-4 gap-5">
                 {
-                    topAnimals.map(animal => <div key={animal.id}>
+                    topAnimals.map(animal => <AnimalCard key={animal.id} animal={animal}>
                         {animal.name}
 
-                    </div>)
+                    </AnimalCard>)
                 }
             </div>
 
