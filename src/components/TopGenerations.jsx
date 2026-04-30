@@ -10,7 +10,7 @@ const TopGenerations = async () => {
     console.log(topAnimals,"topAnimals")
 
     return (
-        <div className="text-2xl font-bold mt-5">
+        <div className="text-2xl font-bold my-5">
             <h1>Top Animals</h1>
 
             <div className="grid grid-cols-4 gap-5">

@@ -1,4 +1,5 @@
-import { Card, Separator } from "@heroui/react";
+import { Button, Card, Chip, Separator } from "@heroui/react";
+import { Butterfly_Kids } from "next/font/google";
 import Image from "next/image";
 import { FaWeightScale } from "react-icons/fa6";
 import { IoLocation } from "react-icons/io5";
@@ -21,7 +22,9 @@ const AnimalCard = ({ animal }) => {
                     alt={animal.name}
                 >
 
+
                 </Image>
+                <Chip size="sm" className="absolute right-2 top-2">{animal.type}</Chip>
             </div>
 
             <div>
@@ -44,7 +47,7 @@ const AnimalCard = ({ animal }) => {
 
             </div>
 
-
+            <Button variant="outline" className="w-full">view</Button>
         </Card>
     );
 };
