@@ -10,12 +10,14 @@ const AnimalCard = ({ animal }) => {
 
     return (
         <Card className="border rounded-xl">
-            <div>
+            <div className="relative w-full aspect-square">
                 <Image
-                    
+                    className="object-cover rounded-xl"
                     src={animal.image}
-                    height={200}
-                    width={200}
+                    // height={200}
+                    // width={200}
+                    fill
+                    sizes="(mx-width:768px) 100vw, (max-width: 1200px) 50vw, 33vw "
                     alt={animal.name}
                 >
 
