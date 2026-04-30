@@ -48,12 +48,12 @@ const Navbar = () => {
             
             {/* FIXED */}
             <li>
-              <Link href="/register">SignUp</Link>
+              <Link href="/signup">SignUp</Link>
             </li>
 
             {/* FIXED */}
             <li>
-              <Link href="/login">SignIn</Link>
+              <Link href="/signin">SignIn</Link>
             </li>
           </ul>
 
