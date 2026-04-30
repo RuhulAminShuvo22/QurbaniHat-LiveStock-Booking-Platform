@@ -107,3 +107,5 @@ const AnimalDetailsPage = async ({ params }) => {
 };
 
 export default AnimalDetailsPage;
+
+
