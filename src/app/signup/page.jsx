@@ -11,30 +11,49 @@
 // export default SignUpPage;
 
 ////////////////////////////////////////////
-
 "use client";
 import React from "react";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
   Card,
-  Description,
   FieldError,
   Form,
   Input,
   Label,
   TextField,
 } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 
 const SignUpPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    // const formData = new FormData(e.target);
+    // const data = Object.fromEntries(formData);
 
-    console.log(data); // ekhane tumi backend e pathaite parba
+    // console.log(data);
+
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    //console.log({name, image, email, password})
+    const {data, error}= await authClient.signUp.email({
+        name,
+        image,
+        email,
+        password
+    })
+
+    console.log({data, error})
+
+
+
   };
+
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -77,29 +96,10 @@ const SignUpPage = () => {
             <FieldError />
           </TextField>
 
-          {/* Password */}
-          <TextField
-            isRequired
-            name="password"
-            type="password"
-            validate={(value) => {
-              if (value.length < 8) {
-                return "Min 8 characters";
-              }
-              if (!/[A-Z]/.test(value)) {
-                return "1 uppercase required";
-              }
-              if (!/[0-9]/.test(value)) {
-                return "1 number required";
-              }
-              return null;
-            }}
-          >
+          {/* Password (No validation now) */}
+          <TextField isRequired name="password" type="password">
             <Label>Password</Label>
             <Input placeholder="Enter password" />
-            <Description>
-              At least 8 characters, 1 uppercase & 1 number
-            </Description>
             <FieldError />
           </TextField>
 
