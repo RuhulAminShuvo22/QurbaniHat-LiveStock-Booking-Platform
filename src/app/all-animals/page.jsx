@@ -6,7 +6,7 @@ const AllAnimalsPage = async () => {
 
     const animals = await res.json();
 
-    console.log(animals);
+    //console.log(animals);
     //
 
     return (

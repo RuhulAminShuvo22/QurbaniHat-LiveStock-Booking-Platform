@@ -1,6 +1,7 @@
 import { Button, Card, Chip, Separator } from "@heroui/react";
 import { Butterfly_Kids } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 import { FaWeightScale } from "react-icons/fa6";
 import { IoLocation } from "react-icons/io5";
 
@@ -47,7 +48,9 @@ const AnimalCard = ({ animal }) => {
 
             </div>
 
-            <Button variant="outline" className="w-full">view</Button>
+            <Link href={`/all-animals/${animal.id}`}>
+                <Button variant="outline" className="w-full">view</Button>            
+            </Link>
         </Card>
     );
 };
