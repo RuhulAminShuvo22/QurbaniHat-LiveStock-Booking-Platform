@@ -22,10 +22,10 @@ const Banner = () => {
 
                         <Link href="/animals">
                             <Button className="bg-gradient-to-r from-green-500 via-lime-500 to-yellow-500 
-    text-black font-semibold px-6 py-2 rounded-full 
-    shadow-lg hover:shadow-2xl 
-    hover:scale-105 transition-all duration-300 
-    border-0">
+                            text-black font-semibold px-6 py-2 rounded-full 
+                            shadow-lg hover:shadow-2xl 
+                            hover:scale-105 transition-all duration-300 
+                            border-0">
                                 🐄 Browse Animals
                             </Button>
                         </Link>
@@ -34,9 +34,9 @@ const Banner = () => {
                             <Button
                                 variant="outline"
                                 className="text-white border-white px-6 py-2 rounded-full 
-      hover:bg-white hover:text-black 
-      transition-all duration-300 
-      hover:scale-105 shadow-md hover:shadow-xl">
+                                hover:bg-white hover:text-black 
+                                transition-all duration-300 
+                                hover:scale-105 shadow-md hover:shadow-xl">
                                 👤 My Profile
                             </Button>
                         </Link>
