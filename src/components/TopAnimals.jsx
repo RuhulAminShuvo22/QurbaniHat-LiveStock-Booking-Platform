@@ -1,13 +1,13 @@
 import AnimalCard from "./AnimalCard";
 
 
-const TopGenerations = async () => {
+const TopAnimals = async () => {
 
     const res = await fetch("https://qurbani-hat-live-stock-booking-plat.vercel.app/data.json")
     const animals = await res.json()
     //console.log(animals,"animals")
-    const topAnimals = animals.slice(0,8);
-    console.log(topAnimals,"topAnimals")
+    const topAnimals = animals.slice(0, 8);
+    console.log(topAnimals, "topAnimals")
 
     return (
         <div className="text-2xl font-bold my-5">
@@ -27,4 +27,4 @@ const TopGenerations = async () => {
     );
 };
 
-export default TopGenerations;
+export default TopAnimals;

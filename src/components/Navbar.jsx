@@ -28,7 +28,7 @@ const Navbar = () => {
 
           {/* FIXED */}
           <li>
-            <Link href="/animals">All Animals</Link>
+            <Link href="/all-animals">All Animals</Link>
           </li>
 
           {/* Optional (extra section) */}
@@ -38,7 +38,7 @@ const Navbar = () => {
 
           {/* FIXED */}
           <li>
-            <Link href="/my-profile">Profile</Link>
+            <Link href="/profile">Profile</Link>
           </li>
         </ul>
 
