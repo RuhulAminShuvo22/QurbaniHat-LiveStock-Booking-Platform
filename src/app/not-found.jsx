@@ -38,6 +38,7 @@ const NotFoundPage = () => {
         </motion.div>
       </div>
     </div>
+    
   );
 };
 
