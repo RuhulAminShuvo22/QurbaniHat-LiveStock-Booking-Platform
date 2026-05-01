@@ -115,6 +115,7 @@ const SignUpPage = () => {
             </Button>
           </div>
         </Form>
+        
       </Card>
     </div>
   );
