@@ -37,6 +37,12 @@ const SignUpPage = () => {
     })
 
     console.log({data, error})
+    if(error){
+      alert(error.message)
+    }
+    if(data){
+      alert("signup successfully")
+    }
 
 
 
