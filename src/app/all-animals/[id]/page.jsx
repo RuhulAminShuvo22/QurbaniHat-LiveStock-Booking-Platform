@@ -1,39 +1,12 @@
-// import React from 'react';
-
-// const AnimalDetailsPage = async ({params}) => {
-
-//     const {id} = await params;
-//     //console.log(id, "id")
-
-//     const res = await fetch("https://qurbani-hat-live-stock-booking-plat.vercel.app/data.json");
-
-//     const animals = await res.json();
-//     //console.log("animals", animals)
-//     const animal = animals.find(p => p.id == id)
-//     //console.log(animal, "animal")
-
-//     return (
-//         <div>
-            
-//             <h1>{animal ?.name}</h1>
-//             <p>{animal.breed}</p>
-//         </div>
-//     );
-// };
-
-// export default AnimalDetailsPage;
-
-
 
 import React from "react";
 import Image from "next/image";
+import BookingSection from "@/components/BookingSection";
 
 const AnimalDetailsPage = async ({ params }) => {
   const { id } = await params;
 
-  const res = await fetch(
-    "http://localhost:3000/data.json"
-  );
+  const res = await fetch("http://localhost:3000/data.json");
 
   const animals = await res.json();
 
@@ -100,12 +73,15 @@ const AnimalDetailsPage = async ({ params }) => {
           <button className="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition">
             Book Now
           </button>
+
         </div>
       </div>
+      
     </div>
   );
 };
 
 export default AnimalDetailsPage;
+
 
 
