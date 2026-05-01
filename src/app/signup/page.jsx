@@ -12,8 +12,12 @@ import {
   TextField,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 const SignUpPage = () => {
+
+  const router = useRouter()
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -33,14 +37,16 @@ const SignUpPage = () => {
         image:image,
         email:email,
         password:password,
-        callbackURL: "/"
+        // callbackURL: "/"
     })
+
 
     console.log({data, error})
     if(error){
       alert(error.message)
     }
     if(data){
+      router.push('/')
       alert("signup successfully")
     }
 
