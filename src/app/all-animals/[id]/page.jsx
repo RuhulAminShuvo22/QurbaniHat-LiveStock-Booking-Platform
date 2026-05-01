@@ -1,7 +1,7 @@
 
 import React from "react";
 import Image from "next/image";
-import BookingSection from "@/components/BookingSection";
+//import BookingSection from "@/components/BookingSection";
 
 const AnimalDetailsPage = async ({ params }) => {
   const { id } = await params;
