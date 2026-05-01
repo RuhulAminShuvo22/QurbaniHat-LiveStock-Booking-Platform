@@ -2,7 +2,7 @@ import AnimalCard from "@/components/AnimalCard";
 
 const AllAnimalsPage = async () => {
 
-    const res = await fetch("https://qurbani-hat-live-stock-booking-plat.vercel.app/data.json");
+    const res = await fetch("http://localhost:3000/data.json");
 
     const animals = await res.json();
 

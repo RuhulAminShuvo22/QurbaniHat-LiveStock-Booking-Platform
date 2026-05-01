@@ -32,7 +32,7 @@ const AnimalDetailsPage = async ({ params }) => {
   const { id } = await params;
 
   const res = await fetch(
-    "https://qurbani-hat-live-stock-booking-plat.vercel.app/data.json"
+    "http://localhost:3000/data.json"
   );
 
   const animals = await res.json();
