@@ -29,10 +29,11 @@ const SignUpPage = () => {
 
     //console.log({name, image, email, password})
     const {data, error}= await authClient.signUp.email({
-        name,
-        image,
-        email,
-        password
+        name:name,
+        image:image,
+        email:email,
+        password:password,
+        callbackURL: "/"
     })
 
     console.log({data, error})
