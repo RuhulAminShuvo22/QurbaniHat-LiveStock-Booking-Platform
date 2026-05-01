@@ -1,4 +1,5 @@
 "use client";
+
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
@@ -6,19 +7,17 @@ import Link from "next/link";
 
 const Navbar = () => {
 
-  const userData = authClient.useSession()
-  const user = userData.data?.user
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
 
-  //console.log(user)
-
-  const handleSignOut = async ()=> {
+  const handleSignOut = async () => {
     await authClient.signOut();
-  }
+  };
 
   return (
     <div className="border-b px-2">
       <nav className="flex justify-between items-center py-3 max-w-7xl mx-auto w-full">
-        
+
         {/* Logo */}
         <div className="flex gap-2 items-center">
           <Image
@@ -34,64 +33,44 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul className="flex items-center gap-5 text-sm">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-
-          {/* FIXED */}
-          <li>
-            <Link href="/all-animals">All Animals</Link>
-          </li>
-
-          {/* Optional (extra section) */}
-          <li>
-            <Link href="/tips">Qurbani Tips</Link>
-          </li>
-
-          {/* FIXED */}
-          <li>
-            <Link href="/profile">Profile</Link>
-          </li>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/all-animals">All Animals</Link></li>
+          <li><Link href="/tips">Qurbani Tips</Link></li>
+          <li><Link href="/profile">Profile</Link></li>
         </ul>
 
         {/* Auth Section */}
         <div className="flex gap-4 items-center">
-          { !user && <ul className="flex items-center text-sm gap-3">
-            
-            {/* FIXED */}
-            <li>
-              <Link href="/signup">SignUp</Link>
-            </li>
 
-            {/* FIXED */}
-            <li>
-              <Link href="/signin">SignIn</Link>
-            </li>
-          </ul>}
+          {!user && (
+            <ul className="flex items-center text-sm gap-3">
+              <li><Link href="/signup">SignUp</Link></li>
+              <li><Link href="/signin">SignIn</Link></li>
+            </ul>
+          )}
 
-          {
-            user && <div>
-                {/* <Image
-                  src="/avatar.png"
-                  alt="user"
-                  width={35}
-                  height={35}
-                  className="rounded-full border cursor-pointer"
-          /> */}
-          <Avatar size="sm">
-            <Avatar.Image
-            alt="user"
-            src={user?.image}
-            referrerPolicy="no-referrer"
-            ><Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+          {user && (
+            <div className="flex items-center gap-3">
 
-            </Avatar.Image>
-          </Avatar>
+              {/* Avatar (SAFE VERSION) */}
+              <Avatar
+                src={user?.image || "/avatar.png"}
+                name={user?.name || "U"}
+                size="sm"
+              />
+
+              {/* SignOut */}
+              <Button
+                onClick={handleSignOut}
+                size="sm"
+                color="danger"
+              >
+                SignOut
+              </Button>
+
             </div>
-          }
-{/* Avatar */}
-          
-          <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
+          )}
+
         </div>
 
       </nav>
